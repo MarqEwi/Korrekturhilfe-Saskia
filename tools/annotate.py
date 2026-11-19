@@ -14,7 +14,7 @@ for p,d in P.items():
     for (ln,x0,x1,by,corr,sign,cnt,*_) in d['items']:
         dr.line((x0,by+20,x1,by+20),fill=RED,width=6)
         tw=dr.textlength(corr,font=fc); tx=max(10,(x0+x1)/2-tw/2)
-        ty=by-102
+        ty=by-102+(_[2] if len(_)>2 else 0)
         dr.text((tx,ty),corr,fill=RED,font=fc,stroke_width=4,stroke_fill=(246,241,226))
         mx=d['margin']+25+used.get(ln,0)
         dr.text((mx,by-50),sign,fill=RED,font=fm)
